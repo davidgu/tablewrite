@@ -4,12 +4,13 @@
  * and open the template in the editor.
  */
 package tablewrite;
+import java.io.*;
 
 /**
  *
  * @author David
  */
-public class Course {
+public class Course implements Serializable{
     
     private String courseCode;
     private String courseName;

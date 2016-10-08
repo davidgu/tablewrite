@@ -14,8 +14,10 @@ import javax.swing.*;
 public class UI extends javax.swing.JFrame {
 
     int currentCourse = 0;
-    ArrayList<Course> courseList = new ArrayList<>();
-    DefaultListModel model = new DefaultListModel();
+    int currentDay = 0;
+    ArrayList<Course> courseList = new ArrayList<>();   
+    ArrayList<Day> dayList = new ArrayList<>();
+    DefaultListModel model = new DefaultListModel();    //Contents of JLists from which courses are selected.
     
     /**
      * Creates new form UI
@@ -23,7 +25,7 @@ public class UI extends javax.swing.JFrame {
     public UI() {
         initComponents();
         
-        lstHomeroom.setModel(model);
+        lstHomeroom.setModel(model);    //Set JLists to listmodel so they all display the same content
         lstPeriod1.setModel(model);
         lstPeriod2.setModel(model);
         lstPeriod3.setModel(model);
@@ -32,11 +34,23 @@ public class UI extends javax.swing.JFrame {
     }
 
     private void updateText(){
-        model.removeAllElements();
-        txtaCourses.setText(null);
-        for(int i =0; i<currentCourse; i++){
+        model.removeAllElements();  //Clear current DefaultListModel
+        txtaCourses.setText(null);  //Clear courses list textarea
+        txtaDays.setText(null);
+        for(int i =0; i<currentCourse; i++){    //Populate DefaultListModel and courses textarea
             model.addElement(courseList.get(i).getCourseName());
             txtaCourses.append(courseList.get(i).getCourseName()+"\n");
+        }
+        for(int i =0; i<currentDay; i++){   //Loops for every day
+            for(int k =0; k<currentCourse; k++){    //Every course within the day
+                txtaDays.append("Day "+(i+1)+"\n");
+                Course course = dayList.get(i).getCourse(k);
+                txtaDays.append(course.getCourseCode()+"\n");
+                txtaDays.append(course.getCourseName()+"\n");
+                txtaDays.append(course.getRoom()+"\n");
+                txtaDays.append(course.getTeacher()+"\n");
+                txtaDays.append("\n");
+            }
         }
     }
     /**
@@ -53,7 +67,7 @@ public class UI extends javax.swing.JFrame {
         txtSchoolAndYear = new javax.swing.JTextField();
         txtNameAndGrade = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtaDays = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtaCourses = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -88,6 +102,7 @@ public class UI extends javax.swing.JFrame {
         txtTeacherName = new javax.swing.JTextField();
         btnCreateCourse = new javax.swing.JButton();
         btnCreateDay = new javax.swing.JButton();
+        btnCreateTimetable = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -102,10 +117,10 @@ public class UI extends javax.swing.JFrame {
         getContentPane().add(txtSchoolAndYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 39, 132, -1));
         getContentPane().add(txtNameAndGrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 39, 127, -1));
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        txtaDays.setEditable(false);
+        txtaDays.setColumns(20);
+        txtaDays.setRows(5);
+        jScrollPane1.setViewportView(txtaDays);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 343, 676));
 
@@ -251,7 +266,21 @@ public class UI extends javax.swing.JFrame {
         getContentPane().add(btnCreateCourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(181, 531, -1, -1));
 
         btnCreateDay.setText("Create");
+        btnCreateDay.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateDayActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnCreateDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, -1, -1));
+
+        btnCreateTimetable.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btnCreateTimetable.setText("Generate Timetable");
+        btnCreateTimetable.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCreateTimetableActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnCreateTimetable, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 650, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -263,6 +292,29 @@ public class UI extends javax.swing.JFrame {
         currentCourse++;
         updateText();
     }//GEN-LAST:event_btnCreateCourseActionPerformed
+
+    private void btnCreateDayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateDayActionPerformed
+        // TODO add your handling code here:
+        int homeroom = lstHomeroom.getSelectedIndex();
+        int period1 = lstPeriod1.getSelectedIndex();
+        int period2 = lstPeriod2.getSelectedIndex();
+        int period3 = lstPeriod3.getSelectedIndex();
+        int period4 = lstPeriod4.getSelectedIndex();
+        int period5 = lstPeriod5.getSelectedIndex();
+        
+        Day day = new Day(courseList.get(homeroom), courseList.get(period1), courseList.get(period2), courseList.get(period3), courseList.get(period4), courseList.get(period5));
+        dayList.add(day);
+        currentDay ++;
+        updateText();
+        
+    }//GEN-LAST:event_btnCreateDayActionPerformed
+
+    private void btnCreateTimetableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateTimetableActionPerformed
+        // TODO add your handling code here:
+        String nameAndGrade = txtNameAndGrade.getText();
+        String schoolAndYear = txtSchoolAndYear.getText();
+        Schedule schedule = new Schedule(nameAndGrade, schoolAndYear, dayList.get(0), dayList.get(1), dayList.get(2), dayList.get(3), dayList.get(4), dayList.get(5), dayList.get(6), dayList.get(7));
+    }//GEN-LAST:event_btnCreateTimetableActionPerformed
 
     /**
      * @param args the command line arguments
@@ -302,6 +354,7 @@ public class UI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreateCourse;
     private javax.swing.JButton btnCreateDay;
+    private javax.swing.JButton btnCreateTimetable;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -310,7 +363,6 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lblCourseCode;
     private javax.swing.JLabel lblCourseName;
     private javax.swing.JLabel lblCourses;
@@ -340,5 +392,6 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JTextField txtSchoolAndYear;
     private javax.swing.JTextField txtTeacherName;
     private javax.swing.JTextArea txtaCourses;
+    private javax.swing.JTextArea txtaDays;
     // End of variables declaration//GEN-END:variables
 }
