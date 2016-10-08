@@ -48,84 +48,73 @@ public class UI extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
+        lblNameAndGrade = new javax.swing.JLabel();
+        lblSchoolAndYear = new javax.swing.JLabel();
+        txtSchoolAndYear = new javax.swing.JTextField();
+        txtNameAndGrade = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jLabel4 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtaCourses = new javax.swing.JTextArea();
-        lblCourses = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         lstHomeroom = new javax.swing.JList();
-        jLabel6 = new javax.swing.JLabel();
         jScrollPane4 = new javax.swing.JScrollPane();
         lstPeriod1 = new javax.swing.JList();
-        jLabel7 = new javax.swing.JLabel();
         jScrollPane5 = new javax.swing.JScrollPane();
         lstPeriod2 = new javax.swing.JList();
-        jLabel8 = new javax.swing.JLabel();
         jScrollPane6 = new javax.swing.JScrollPane();
         lstPeriod3 = new javax.swing.JList();
-        jLabel9 = new javax.swing.JLabel();
         jScrollPane7 = new javax.swing.JScrollPane();
         lstPeriod4 = new javax.swing.JList();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
         jScrollPane8 = new javax.swing.JScrollPane();
         lstPeriod5 = new javax.swing.JList();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
+        lblNewDay = new javax.swing.JLabel();
+        lblDays = new javax.swing.JLabel();
+        lblCourses = new javax.swing.JLabel();
+        lblNewCourse = new javax.swing.JLabel();
+        lblCourseCode = new javax.swing.JLabel();
+        lblCourseName = new javax.swing.JLabel();
+        lblHomeroom = new javax.swing.JLabel();
+        lblPeriod1 = new javax.swing.JLabel();
+        lblPeriod2 = new javax.swing.JLabel();
+        lblPeriod3 = new javax.swing.JLabel();
+        lblPeriod4 = new javax.swing.JLabel();
+        lblPeriod5 = new javax.swing.JLabel();
+        lblRoomCampus = new javax.swing.JLabel();
+        lblTeacherName = new javax.swing.JLabel();
         txtCourseCode = new javax.swing.JTextField();
         txtCourseName = new javax.swing.JTextField();
         txtRoomCampus = new javax.swing.JTextField();
         txtTeacherName = new javax.swing.JTextField();
         btnCreateCourse = new javax.swing.JButton();
-        btnCreateCourse1 = new javax.swing.JButton();
+        btnCreateDay = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel1.setText("Name and Grade");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
+        lblNameAndGrade.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblNameAndGrade.setText("Name and Grade");
+        getContentPane().add(lblNameAndGrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel2.setText("Days");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(801, 11, -1, -1));
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 39, 132, -1));
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 39, 127, -1));
+        lblSchoolAndYear.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblSchoolAndYear.setText("School and Year");
+        getContentPane().add(lblSchoolAndYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 11, 344, -1));
+        getContentPane().add(txtSchoolAndYear, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 39, 132, -1));
+        getContentPane().add(txtNameAndGrade, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 39, 127, -1));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel3.setText("Homeroom");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 151, -1, -1));
-
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 343, 676));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel4.setText("School and Year");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 11, 344, -1));
-
+        txtaCourses.setEditable(false);
         txtaCourses.setColumns(20);
         txtaCourses.setRows(5);
         jScrollPane2.setViewportView(txtaCourses);
 
         getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 40, -1, 377));
-
-        lblCourses.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        lblCourses.setText("Courses");
-        getContentPane().add(lblCourses, new org.netbeans.lib.awtextra.AbsoluteConstraints(543, 11, -1, -1));
 
         jScrollPane3.setMaximumSize(new java.awt.Dimension(87, 87));
 
@@ -138,10 +127,6 @@ public class UI extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 179, 87, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel6.setText("Period 1");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 151, -1, -1));
-
         jScrollPane4.setMaximumSize(new java.awt.Dimension(65, 65));
 
         lstPeriod1.setModel(new javax.swing.AbstractListModel() {
@@ -152,10 +137,6 @@ public class UI extends javax.swing.JFrame {
         jScrollPane4.setViewportView(lstPeriod1);
 
         getContentPane().add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 179, 65, -1));
-
-        jLabel7.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel7.setText("Period 2");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 151, -1, -1));
 
         jScrollPane5.setMaximumSize(new java.awt.Dimension(65, 32767));
 
@@ -168,10 +149,6 @@ public class UI extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 179, 65, -1));
 
-        jLabel8.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel8.setText("Period 3");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 151, -1, -1));
-
         jScrollPane6.setMaximumSize(new java.awt.Dimension(65, 32767));
 
         lstPeriod3.setModel(new javax.swing.AbstractListModel() {
@@ -182,10 +159,6 @@ public class UI extends javax.swing.JFrame {
         jScrollPane6.setViewportView(lstPeriod3);
 
         getContentPane().add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 179, 65, -1));
-
-        jLabel9.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel9.setText("New Day");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 111, -1, -1));
 
         jScrollPane7.setMaximumSize(new java.awt.Dimension(65, 32767));
 
@@ -198,29 +171,6 @@ public class UI extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 179, 65, -1));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel10.setText("New Course");
-        getContentPane().add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 394, -1, -1));
-
-        jLabel11.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel11.setText("Period 4");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 151, -1, -1));
-
-        jButton1.setText("Create");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, -1, -1));
-
-        jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel12.setText("Course Code");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 429, -1, -1));
-
-        jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel13.setText("Course Name");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 455, -1, -1));
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        jLabel14.setText("Period 5");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 151, -1, -1));
-
         jScrollPane8.setMaximumSize(new java.awt.Dimension(65, 32767));
 
         lstPeriod5.setModel(new javax.swing.AbstractListModel() {
@@ -232,13 +182,61 @@ public class UI extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 179, 65, -1));
 
-        jLabel15.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel15.setText("Room and Campus");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 481, -1, -1));
+        lblNewDay.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblNewDay.setText("New Day");
+        getContentPane().add(lblNewDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(172, 111, -1, -1));
 
-        jLabel16.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
-        jLabel16.setText("Teacher Name");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 507, -1, -1));
+        lblDays.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblDays.setText("Days");
+        getContentPane().add(lblDays, new org.netbeans.lib.awtextra.AbsoluteConstraints(801, 11, -1, -1));
+
+        lblCourses.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblCourses.setText("Courses");
+        getContentPane().add(lblCourses, new org.netbeans.lib.awtextra.AbsoluteConstraints(543, 11, -1, -1));
+
+        lblNewCourse.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblNewCourse.setText("New Course");
+        getContentPane().add(lblNewCourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(158, 394, -1, -1));
+
+        lblCourseCode.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblCourseCode.setText("Course Code");
+        getContentPane().add(lblCourseCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 429, -1, -1));
+
+        lblCourseName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblCourseName.setText("Course Name");
+        getContentPane().add(lblCourseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(39, 455, -1, -1));
+
+        lblHomeroom.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblHomeroom.setText("Homeroom");
+        getContentPane().add(lblHomeroom, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 151, -1, -1));
+
+        lblPeriod1.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblPeriod1.setText("Period 1");
+        getContentPane().add(lblPeriod1, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 151, -1, -1));
+
+        lblPeriod2.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblPeriod2.setText("Period 2");
+        getContentPane().add(lblPeriod2, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 151, -1, -1));
+
+        lblPeriod3.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblPeriod3.setText("Period 3");
+        getContentPane().add(lblPeriod3, new org.netbeans.lib.awtextra.AbsoluteConstraints(257, 151, -1, -1));
+
+        lblPeriod4.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblPeriod4.setText("Period 4");
+        getContentPane().add(lblPeriod4, new org.netbeans.lib.awtextra.AbsoluteConstraints(332, 151, -1, -1));
+
+        lblPeriod5.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lblPeriod5.setText("Period 5");
+        getContentPane().add(lblPeriod5, new org.netbeans.lib.awtextra.AbsoluteConstraints(407, 151, -1, -1));
+
+        lblRoomCampus.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblRoomCampus.setText("Room and Campus");
+        getContentPane().add(lblRoomCampus, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 481, -1, -1));
+
+        lblTeacherName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        lblTeacherName.setText("Teacher Name");
+        getContentPane().add(lblTeacherName, new org.netbeans.lib.awtextra.AbsoluteConstraints(31, 507, -1, -1));
         getContentPane().add(txtCourseCode, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 427, 180, -1));
         getContentPane().add(txtCourseName, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 453, 180, -1));
         getContentPane().add(txtRoomCampus, new org.netbeans.lib.awtextra.AbsoluteConstraints(121, 479, 180, -1));
@@ -252,13 +250,8 @@ public class UI extends javax.swing.JFrame {
         });
         getContentPane().add(btnCreateCourse, new org.netbeans.lib.awtextra.AbsoluteConstraints(181, 531, -1, -1));
 
-        btnCreateCourse1.setText("Create");
-        btnCreateCourse1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCreateCourse1ActionPerformed(evt);
-            }
-        });
-        getContentPane().add(btnCreateCourse1, new org.netbeans.lib.awtextra.AbsoluteConstraints(181, 531, -1, -1));
+        btnCreateDay.setText("Create");
+        getContentPane().add(btnCreateDay, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -270,10 +263,6 @@ public class UI extends javax.swing.JFrame {
         currentCourse++;
         updateText();
     }//GEN-LAST:event_btnCreateCourseActionPerformed
-
-    private void btnCreateCourse1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateCourse1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCreateCourse1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -312,23 +301,7 @@ public class UI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreateCourse;
-    private javax.swing.JButton btnCreateCourse1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
+    private javax.swing.JButton btnCreateDay;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -338,9 +311,22 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lblCourseCode;
+    private javax.swing.JLabel lblCourseName;
     private javax.swing.JLabel lblCourses;
+    private javax.swing.JLabel lblDays;
+    private javax.swing.JLabel lblHomeroom;
+    private javax.swing.JLabel lblNameAndGrade;
+    private javax.swing.JLabel lblNewCourse;
+    private javax.swing.JLabel lblNewDay;
+    private javax.swing.JLabel lblPeriod1;
+    private javax.swing.JLabel lblPeriod2;
+    private javax.swing.JLabel lblPeriod3;
+    private javax.swing.JLabel lblPeriod4;
+    private javax.swing.JLabel lblPeriod5;
+    private javax.swing.JLabel lblRoomCampus;
+    private javax.swing.JLabel lblSchoolAndYear;
+    private javax.swing.JLabel lblTeacherName;
     private javax.swing.JList lstHomeroom;
     private javax.swing.JList lstPeriod1;
     private javax.swing.JList lstPeriod2;
@@ -349,7 +335,9 @@ public class UI extends javax.swing.JFrame {
     private javax.swing.JList lstPeriod5;
     private javax.swing.JTextField txtCourseCode;
     private javax.swing.JTextField txtCourseName;
+    private javax.swing.JTextField txtNameAndGrade;
     private javax.swing.JTextField txtRoomCampus;
+    private javax.swing.JTextField txtSchoolAndYear;
     private javax.swing.JTextField txtTeacherName;
     private javax.swing.JTextArea txtaCourses;
     // End of variables declaration//GEN-END:variables
