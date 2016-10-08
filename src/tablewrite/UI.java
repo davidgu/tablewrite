@@ -31,6 +31,7 @@ public class UI extends javax.swing.JFrame {
         lstPeriod3.setModel(model);
         lstPeriod4.setModel(model);
         lstPeriod5.setModel(model);
+        
     }
 
     private void updateText(){
@@ -122,7 +123,7 @@ public class UI extends javax.swing.JFrame {
         txtaDays.setRows(5);
         jScrollPane1.setViewportView(txtaDays);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 40, 343, 676));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 40, 270, 676));
 
         txtaCourses.setEditable(false);
         txtaCourses.setColumns(20);
@@ -203,11 +204,11 @@ public class UI extends javax.swing.JFrame {
 
         lblDays.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblDays.setText("Days");
-        getContentPane().add(lblDays, new org.netbeans.lib.awtextra.AbsoluteConstraints(801, 11, -1, -1));
+        getContentPane().add(lblDays, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 10, -1, -1));
 
         lblCourses.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblCourses.setText("Courses");
-        getContentPane().add(lblCourses, new org.netbeans.lib.awtextra.AbsoluteConstraints(543, 11, -1, -1));
+        getContentPane().add(lblCourses, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 10, -1, -1));
 
         lblNewCourse.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lblNewCourse.setText("New Course");
@@ -311,9 +312,29 @@ public class UI extends javax.swing.JFrame {
 
     private void btnCreateTimetableActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreateTimetableActionPerformed
         // TODO add your handling code here:
-        String nameAndGrade = txtNameAndGrade.getText();
+        String nameAndGrade = txtNameAndGrade.getText();        //Create schedule object to serialize
         String schoolAndYear = txtSchoolAndYear.getText();
         Schedule schedule = new Schedule(nameAndGrade, schoolAndYear, dayList.get(0), dayList.get(1), dayList.get(2), dayList.get(3), dayList.get(4), dayList.get(5), dayList.get(6), dayList.get(7));
+        File directory = null;
+        JFileChooser saveDialog = new JFileChooser();   //Create file chooser dialog
+        saveDialog.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY); //Select only folders, as file will be saved to folder
+        
+        if(saveDialog.showSaveDialog(null)==JFileChooser.APPROVE_OPTION){   //If a directory is selected
+            directory = saveDialog.getSelectedFile();   //Get directory
+        }
+        
+        try{
+            String outputDirectory = directory.getAbsolutePath()+"\\timetable.ser"; //File will be named timetable.ser within the directory. Double slash as first slash is escape character.
+            FileOutputStream output = new FileOutputStream(outputDirectory);
+            ObjectOutputStream objectOut = new ObjectOutputStream(output);
+            objectOut.writeObject(schedule);
+            objectOut.close();
+            output.close();
+        }
+        catch(IOException i){
+            System.out.println(i);
+        }
+        
     }//GEN-LAST:event_btnCreateTimetableActionPerformed
 
     /**
